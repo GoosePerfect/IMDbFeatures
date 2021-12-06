@@ -10,7 +10,8 @@ Feature: To test the movie page functionality
         When I click on the actor
         Then I get redirected to actors info page
 
-    Scenario: User review page
+    Scenario: All topics button
         Given I am on the movie page
-        When I click on User reviews
-        Then I get redirected to user reviews
+        When I click on the button All topics
+        And I click on Awards
+        Then I get redirected to page with list of awards

@@ -23,14 +23,17 @@ Then('I get redirected to actors info page', async () => {
     await expect(browser).toHaveUrlContaining('/name/nm0000138/?ref_=tt_ov_st')
 });
 
-
 // Scenario 3
-When('I click on User reviews', async () => {
-    await $('*[href="/title/tt1375666/reviews?ref_=tt_ov_rt"]').click(); 
+When('I click on the button All topics', async () => {
+    await $('*[class="ipc-responsive-button ipc-btn--theme-baseAlt ipc-responsive-button--transition-xs ipc-btn--on-textPrimary AllTopicsButton__ResponsiveButtonBreakpointsAllExceptM-sc-30dzxw-2 bZocno"]').click();
 });
 
-Then('I get redirected to user reviews', async () => {
-    await expect(browser).toHaveUrlContaining('/title/tt1375666/reviews?ref_=tt_ov_rt')
+When('I click on Awards', async () => {
+    await $('*[data-testid="page-link-awards"]').click();
+});
+
+Then('I get redirected to page with list of awards', async () => {
+    await expect(browser).toHaveUrlContaining('/title/tt1375666/awards?ref_=tt_ql_sm')
 });
 
 
