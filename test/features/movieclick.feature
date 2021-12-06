@@ -1,5 +1,4 @@
 Feature: To test the movie page functionality 
-    "As a user I want to search movies, that want to find."
 
     Scenario: Play trailer    
         Given I am on the movie page
