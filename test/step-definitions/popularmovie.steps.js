@@ -38,7 +38,7 @@ When('I select IMDbs rating', async () => {
 });
 
 Then('I see most popular movies sorted by IMDbs rating', async() => {
-    await expect(browser).toHaveUrlContaining('/chart/moviemeter/?sort=ir');
+    await expect(browser).toHaveUrl('https://www.imdb.com/chart/moviemeter/?sort=ir,desc&mode=simple&page=1');
 });
 
 //////////////// Scenario 3 /////////////////////
@@ -49,7 +49,7 @@ When('I select Release date', async () => {
 });
 
 Then('I see most popular movies sorted by release date', async() => {
-    await expect(browser).toHaveUrlContaining('/chart/moviemeter/?sort=us');
+    await expect(browser).toHaveUrl('https://www.imdb.com/chart/moviemeter/?sort=us,desc&mode=simple&page=1');
 });
 
 //////////////// Scenario 4 /////////////////////
