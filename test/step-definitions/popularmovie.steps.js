@@ -7,7 +7,7 @@ Given('I am on IMDbs home page', async () =>{
 });
 
 When('I click on menu button', async () => {
-    const clickOnMenuButton = await $('*[class="ipc-icon ipc-icon--menu ipc-button__icon ipc-button__icon--pre"]');
+    const clickOnMenuButton = await $('*[class="ipc-button__text"]');
     clickOnMenuButton.click();
 });
 
