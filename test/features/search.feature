@@ -17,6 +17,10 @@ Feature: Search IMDb All
         And I hit the Return key
         Then I see results containing the text "Morgan Freeman" in their title or description
 
-    #Scenario: Searching for Christian Bale in advanced search page
-        #Given I am on the advanced search page
-        #When 
+    Scenario: Searching for movie with famous quote "I'll be back" in advanced search page
+        Given I am on the advanced search page
+        When I click on the Movies, TV and Video Games dropdown
+        And I select quotes
+        And I enter "I'll be back" in the "#input" field
+        And I hit the search button
+        Then I see results containing the text "I'll be back" on the page
