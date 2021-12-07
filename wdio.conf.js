@@ -21,7 +21,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/features/popularmovie.feature'
+        './test/features/*.feature'
     ],
     // Patterns to exclude.
     exclude: [
