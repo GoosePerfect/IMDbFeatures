@@ -56,11 +56,11 @@ Then('I see most popular movies sorted by release date', async() => {
 //////////////// Scenario 4 /////////////////////
 
 Given('I see movies sorted by release date', async () => {
-    await browser.url('https://www.imdb.com/chart/moviemeter/?sort=us,asc&mode=simple&page=1');
+    await browser.url('https://www.imdb.com/chart/moviemeter/?sort=us,desc&mode=simple&page=1');
 });
 
 When('I click on descending order', async () => {
-    const clickOnDescendingOrder = await ($('*[data-sort="rk:desc"]'));
+    const clickOnDescendingOrder = await ($('*[class="global-sprite lister-sort-reverse ascending"]'));
     clickOnDescendingOrder.click();
 });
 
