@@ -14,21 +14,22 @@ When('I click on menu button', async () => {
 When('I click on Most Popular Movie', async () => {
     const clickOnMostPopularMovie = await $('*[href="/chart/moviemeter/?ref_=nv_mv_mpm"]');
     clickOnMostPopularMovie.click();
+    expect ($('*[href="/chart/moviemeter/?ref_=nv_mv_mpm"]'));
 });
 
 Then(/^I see results containing the text "(.*)" as title or desciption on the page$/, async (text) => {
-    await expect(browser).toHaveUrlContaining('/chart/moviemeter/?ref_=nv_mv_mpm');
+    await expect(browser).toHaveUrl('https://www.imdb.com/chart/moviemeter/?ref_=nv_mv_mpm');
     await expect($('body')).toHaveTextContaining(text);
 });
 
 //////////////// Scenario 2 /////////////////////
 
 Given('I am on the IMDbs Most Popular Movie Page', async () => {
-    await browser.url(`https://www.imdb.com/chart/moviemeter/?ref_=nv_mv_mpm`);
+    await browser.url('https://www.imdb.com/chart/moviemeter/?ref_=nv_mv_mpm');
 });
 
 When('I click on the sort by dropdown menu', async () => {
-    const clickOnDropDownMenu = await ($('*[class=lister-sort-by]'));
+    const clickOnDropDownMenu = await ($('*[id="lister-sort-by-options"]'));
     clickOnDropDownMenu.click();
 });
 
@@ -55,7 +56,7 @@ Then('I see most popular movies sorted by release date', async() => {
 //////////////// Scenario 4 /////////////////////
 
 Given('I see movies sorted by release date', async () => {
-    await browser.url(`https://www.imdb.com/chart/moviemeter/?sort=us,asc&mode=simple&page=1`);
+    await browser.url('https://www.imdb.com/chart/moviemeter/?sort=us,asc&mode=simple&page=1');
 });
 
 When('I click on descending order', async () => {
