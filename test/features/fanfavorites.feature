@@ -16,7 +16,7 @@ Feature: IMDb Fan favorites
         Then I see all movies & series in "Fan favorites"
 
 
-    Scenario: Add to watchlist - failure
+    Scenario: Add to watchlist - Failure
 
         Given I am on the IMDb Front Page
         When I click on "Watch List"
