@@ -7,12 +7,12 @@ Given('I am on IMDbs home page', async () =>{
 });
 
 When('I click on menu button', async () => {
-    const clickOnMenuButton = await($('*[class="ipc-icon ipc-icon--menu ipc-button__icon ipc-button__icon--pre"]'));
+    const clickOnMenuButton = await $('*[class="ipc-icon ipc-icon--menu ipc-button__icon ipc-button__icon--pre"]');
     clickOnMenuButton.click();
 });
 
 When('I click on Most Popular Movie', async () => {
-    const clickOnMostPopularMovie = await($('[href="/chart/moviemeter/?ref_=nv_mv_mpm"]'));
+    const clickOnMostPopularMovie = await $('*[href="/chart/moviemeter/?ref_=nv_mv_mpm"]');
     clickOnMostPopularMovie.click();
 });
 
