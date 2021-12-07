@@ -3,8 +3,8 @@ const { Given, When, Then } = require('@wdio/cucumber-framework');
 
 // Searching in all categories
 
-Given('I am on the IMDb home page', async () => {
-    await browser.url(`https://imdb.com/`);
+Given(/^Efraim am on the IMDb home page$/, async () => {
+    await browser.url(`https://imdb.com`);
 });
 
 When(/^I enter the text "(.*)" in the "(.*)" field$/, async (text, id) => {

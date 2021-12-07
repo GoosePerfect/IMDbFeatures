@@ -2,7 +2,7 @@ const { Given, When, Then } = require('@wdio/cucumber-framework');
 
 //Scenario 1
 Given(/^I am on the IMDb home page$/, async () => {
-    await browser.url("https://www.imdb.com");
+    await browser.url("https://www.imdb.com/");
 });
 
 When(/^I press the menu button$/, async () => {
@@ -16,19 +16,19 @@ When(/^I am in the menu, click the X$/, async () => {
 });
 
 Then(/^check if I am on the home page$/, async () => {
-    expect(browser).toHaveUrl("https://www.imdb.com");
+    expect(browser).toHaveUrl("https://www.imdb.com/");
 });
 
 
 //Scenario 2
-When(/^I am in the menu, click the imdb logo$/, async () => {
+When(/^Morris am in the menu, click the imdb logo$/, async () => {
     await $('[class="ipc-logo WNY8DBPCS1ZbiSd7NoqdP"]').waitForDisplayed({timeout: 2000, timeoutMsg: "Clicked menu but not displayed"});
     await browser.pause(500);
     await $('[class="ipc-logo WNY8DBPCS1ZbiSd7NoqdP"]').click();
 });
 
-Then(/^I check if i am on the home page$/, async () => {
-    expect(browser).toHaveUrl("https://www.imdb.com");
+Then(/^Morris check if i am on the home page$/, async () => {
+    expect(browser).toHaveUrl("https://www.imdb.com/?ref_=nv_home");
 });
 
 

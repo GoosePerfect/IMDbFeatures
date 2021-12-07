@@ -3,7 +3,7 @@ Feature: Search IMDb All
 
     Scenario: Searching for Batman Begins
         
-        Given I am on the IMDb home page
+        Given Efraim am on the IMDb home page
         When I enter the text "Batman Begins" in the "#input" field
         And I hit the Return key
         Then I see results containing the text "Batman Begins" in their title or description

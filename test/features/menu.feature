@@ -11,8 +11,8 @@ Feature: IMDb Menu
 
     Given I am on the IMDb home page
     When I press the menu button
-    When I am in the menu, click the imdb logo
-    Then I check if i am on the home page
+    When Morris am in the menu, click the imdb logo
+    Then Morris check if i am on the home page
 
 
     Scenario: IMDb Menu best of 2021
