@@ -9,7 +9,7 @@ Given('I am on the IMDb home page', async () => {
 
 When(/^I enter the text "(.*)" in the "(.*)" field$/, async (text, id) => {
     await $('*[name="q"]').setValue(text);
-    await expect($('*[name="q"]')).toHaveValue(text);
+    expect( await $('*[name="q"]')).toHaveValue(text);
 });
 
 When('I hit the Return key', async() => {
@@ -17,7 +17,7 @@ When('I hit the Return key', async() => {
 });
 
 Then(/^I see results containing the text "(.*)" in their title or description$/, async(text) => {
-    await expect($('body')).toHaveTextContaining(text);
+    expect( await $('body')).toHaveTextContaining(text);
 });
 
 
@@ -33,7 +33,7 @@ When('I click on celebs', async () => {
 
 When(/^I enter the name "(.*)" in the "(.*)" field$/, async (text, id) => {
     await $('*[name="q"]').setValue(text);
-    await expect($('*[name="q"]')).toHaveValue(text);
+    expect( await $('*[name="q"]')).toHaveValue(text);
 });
 
 // When doing an advanced search
@@ -52,7 +52,7 @@ When('I select quotes', async () => {
 
 When(/^I enter "(.*)" in the "(.*)" field$/, async (text, id) => {
     await $('//*[@id="query"]').setValue(text);
-    await expect($('//*[@id="query"]')).toHaveValue(text);
+    expect( await $('//*[@id="query"]')).toHaveValue(text);
 });
 
 When('I hit the search button', async () => {
@@ -60,6 +60,5 @@ When('I hit the search button', async () => {
 });
 
 Then(/^I see results containing the text "(.*)" on the page$/, async(text) => {
-    await expect($('body')).toHaveTextContaining(text);
-    //await expect($('body')).toHaveTextContaining(text2);
+    expect( await $('body')).toHaveTextContaining(text);
 });
