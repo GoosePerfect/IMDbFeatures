@@ -7,19 +7,20 @@ Given('I am on IMDbs home page', async () =>{
 });
 
 When('I click on menu button', async () => {
+    
     const clickOnMenuButton = await $('*[class="ipc-button__text"]');
-    clickOnMenuButton.click();
+    await clickOnMenuButton.click();
 });
 
 When('I click on Most Popular Movie', async () => {
     const clickOnMostPopularMovie = await $('*[href="/chart/moviemeter/?ref_=nv_mv_mpm"]');
-    clickOnMostPopularMovie.click();
-    expect ($('*[href="/chart/moviemeter/?ref_=nv_mv_mpm"]'));
+    await clickOnMostPopularMovie.click();
 });
 
 Then(/^I see results containing the text "(.*)" as title or desciption on the page$/, async (text) => {
-    await expect(browser).toHaveUrl('https://www.imdb.com/chart/moviemeter/?ref_=nv_mv_mpm');
-    await expect($('body')).toHaveTextContaining(text);
+    expect (await (browser)).toHaveUrl('https://www.imdb.com/chart/moviemeter/?ref_=nv_mv_mpm');
+    const header =  await $('[class="header"]').getText();
+    expect (header).toBe(text);
 });
 
 //////////////// Scenario 2 /////////////////////
@@ -39,7 +40,7 @@ When('I select IMDbs rating', async () => {
 });
 
 Then('I see most popular movies sorted by IMDbs rating', async() => {
-    await expect(browser).toHaveUrl('https://www.imdb.com/chart/moviemeter/?sort=ir,desc&mode=simple&page=1');
+    expect (await(browser)).toHaveUrl('https://www.imdb.com/chart/moviemeter/?sort=ir,desc&mode=simple&page=1');
 });
 
 //////////////// Scenario 3 /////////////////////
@@ -50,7 +51,7 @@ When('I select Release date', async () => {
 });
 
 Then('I see most popular movies sorted by release date', async() => {
-    await expect(browser).toHaveUrl('https://www.imdb.com/chart/moviemeter/?sort=us,desc&mode=simple&page=1');
+    expect (await(browser)).toHaveUrl('https://www.imdb.com/chart/moviemeter/?sort=us,desc&mode=simple&page=1');
 });
 
 //////////////// Scenario 4 /////////////////////
@@ -65,6 +66,6 @@ When('I click on descending order', async () => {
 });
 
 Then('I see movies sorted by released date by ascending order', async() => {
-    await expect(browser).toHaveUrlContaining('/chart/moviemeter/?sort=us,asc&mode=simple&page=1');
+    expect (await(browser)).toHaveUrlContaining('/chart/moviemeter/?sort=us,asc&mode=simple&page=1');
 });
 

@@ -27,7 +27,7 @@ Feature: See IMDbs most popular movies
       Then I see most popular movies sorted by release date
 
     Scenario: Ascend order of movies sorted by release date 
-      "As a user I want to see the oldest most popular movie on the top "
+      "As a user I want to see the oldest of most popular movie on the top "
 
       Given I see movies sorted by release date
       When I click on descending order
